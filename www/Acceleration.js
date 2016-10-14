@@ -19,10 +19,11 @@
  *
 */
 
-var Acceleration = function(x, y, z, timestamp) {
+var Acceleration = function(x, y, z, timestamp, p) {
     this.x = x;
     this.y = y;
     this.z = z;
+    this.p = p;
     this.timestamp = timestamp || (new Date()).getTime();
 };
 

@@ -73,6 +73,7 @@ public class AccelListener extends CordovaPlugin implements SensorEventListener 
         this.x = 0;
         this.y = 0;
         this.z = 0;
+        this.p = 0;
         this.timestamp = 0;
         this.setStatus(AccelListener.STOPPED);
      }
@@ -256,7 +257,7 @@ public class AccelListener extends CordovaPlugin implements SensorEventListener 
             this.x = event.values[0];
             this.y = event.values[1];
             this.z = event.values[2];
-
+            this.p = event.sensor.getPower();
             this.win();
         }
     }
@@ -302,6 +303,7 @@ public class AccelListener extends CordovaPlugin implements SensorEventListener 
             r.put("x", this.x);
             r.put("y", this.y);
             r.put("z", this.z);
+            r.put("p", this.p);
             r.put("timestamp", this.timestamp);
         } catch (JSONException e) {
             e.printStackTrace();
